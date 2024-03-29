@@ -8,13 +8,13 @@
 
 1. Click **Use this template**.
 2. **Clone** your project.
-3. Run `yarn install` to install dependencies.
+3. Run `bun install` to install dependencies.
 4. Run `npx napi rename -n [name]` command under the project folder to rename your package.
 
 ## Install this test package
 
 ```
-yarn add @napi-rs/package-template
+bun add @napi-rs/package-template
 ```
 
 ## Support matrix
@@ -41,11 +41,11 @@ yarn add @napi-rs/package-template
 
 ### Build
 
-After `yarn build/npm run build` command, you can see `package-template.[darwin|win32|linux].node` file in project root. This is the native addon built from [lib.rs](./src/lib.rs).
+After `bun run build` command, you can see `package-template.[darwin|win32|linux].node` file in project root. This is the native addon built from [lib.rs](./src/lib.rs).
 
 ### Test
 
-With [ava](https://github.com/avajs/ava), run `yarn test/npm run test` to testing native addon. You can also switch to another testing framework if you want.
+With [ava](https://github.com/avajs/ava), run `bun run test` to testing native addon. You can also switch to another testing framework if you want.
 
 ### CI
 
@@ -61,19 +61,19 @@ The other problem is how to deliver prebuild `binary` to users. Downloading it i
 
 In this package, we choose a better way to solve this problem. We release different `npm packages` for different platforms. And add it to `optionalDependencies` before releasing the `Major` package to npm.
 
-`NPM` will choose which native package should download from `registry` automatically. You can see [npm](./npm) dir for details. And you can also run `yarn add @napi-rs/package-template` to see how it works.
+`NPM` will choose which native package should download from `registry` automatically. You can see [npm](./npm) dir for details. And you can also run `bun add @napi-rs/package-template` to see how it works.
 
 ## Develop requirements
 
 - Install the latest `Rust`
-- Install `Node.js@10+` which fully supported `Node-API`
-- Install `yarn@1.x`
+- Install `Node.js >= 18.x` which fully supported `Node-API`
+- Install `bun >= 1.x`
 
 ## Test in local
 
-- yarn
-- yarn build
-- yarn test
+- bun
+- bun run build
+- bun run test
 
 And you will see:
 
