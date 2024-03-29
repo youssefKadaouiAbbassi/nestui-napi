@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'yarn'
 
       - name: Install
         uses: dtolnay/rust-toolchain@stable
@@ -29,10 +28,10 @@ jobs:
           components: clippy, rustfmt
 
       - name: Install dependencies
-        run: yarn install
+        run: bun install
 
       - name: ESLint
-        run: yarn lint
+        run: bun run lint
 
       - name: Cargo fmt
         run: cargo fmt -- --check
