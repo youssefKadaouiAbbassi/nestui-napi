@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: bun install
       - name: Run tests
-        run: bun test
+        run: bun run test
       - name: Publish
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
         run: |
